@@ -6,7 +6,7 @@ int main(){
 	do{
 		cout<<"masukkan bilangan : ";
 		cin>>bil;
-		if(bil>50){
+		if(bil>50 || bil<1){
 			cout<<">> range 1-50\n";
 			valid=false;
 		}else{

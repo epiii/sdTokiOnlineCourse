@@ -12,10 +12,12 @@ int main(){
 		}else{
 			valid=true;
 			for(int i=1;i<=bil;i++ ){
-				for(int j=1;j<=bil;j++ ){
-					if(j<i) cout<<" ";
-					else cout<<"*";
-				}cout<<endl;	
+				for(int j=1;j<=bil-i;j++ ){
+					cout<<" ";
+				}
+				for(int k=1;k<=i-1;k++ ){
+					cout<<"*"; // untuk baris pertama tidak tercetak
+				}cout<<"*"<<endl;	
 			}
 		}
 	}while(!valid);
