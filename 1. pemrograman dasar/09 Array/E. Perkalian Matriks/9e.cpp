@@ -1,37 +1,53 @@
 #include <iostream>
 
 int main(){
-	int m,n;
-	cout<<"masukkan ordo m x n :";
-	cin>>m>>n;
+	int x1=3,y1=3;
+	int x2=3,y2=4;
 
-	int mat[100][100];
-	for (int i = 0; i < m; i++){
-		for(int j=0; j<n; j++){
-			cin>>mat[i][j];
+	int matA[100][100];
+	int matB[100][100];
+	int matC[100][100];
+
+	cout<<"masukkan matrix A:\n";
+	for (int i = 0; i <x1; i++){
+		for(int j=0; j<y1; j++){
+			cin>>matA[i][j];
 		}
-	}cout<<"\ncetak:\n"; // m x n = 4 x 3 
-	for (int i = 0; i<=n-1; i++){ 
-		for(int j=m-1; j>=0; j--){
-			cout<<mat[j][i]<<" ";
+	}
+	cout<<"masukkan matrix B:\n";
+	for (int i = 0; i <x2; i++){
+		for(int j=0; j<y2; j++){
+			cin>>matB[i][j];
+		}
+	}
+	cout<<"\nhasil:\n"; // m x n = 4 x 3 
+	for (int i=0; i<x1; i++){ 
+		for(int j=0; j<y2; j++){
+			matC[i][j]=0;
+			// cout<<i<<j<<" ";
+			for(int z=0; z<y2; z++){
+				cout<<i<<j<<" ";
+				matC[i][j]+=matA[i][j]*matB[i+1][j];
+			}
+			// cout<<matC[i][j]<<" ";
 		}cout<<endl;
-	}return 0;
+	}
+
+
+	return 0;
 }
 /*
-m x n
-4 x 3
+n x m = 3 x 3
+m x p = 3 x 4
 
-1 2 3
-4 5 6
-7 8 9
-10 11 12
+n x p = 3 x 4
 
-11 12
-13 14
-15 16  
+2 3 4
+1 1 1
+1 1 2
 
-30 20 10 00
-31 21 11 01 
-32 22 12 02 
+1 1 1 1
+1 1 1 1
+1 1 1 2
 
 */
